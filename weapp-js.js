@@ -17,51 +17,59 @@ $(document).ready(function(){
 		lat = position.coords.latitude ;
 		lon = position.coords.longitude;
 		fullUrl = "https://fcc-weather-api.glitch.me/api/current?lat="+lat+"&lon="+lon;
-		
-		//Check the url:
+
+		// Check the url:
 		console.log(fullUrl);
-		
-		//THEN => make the request with ajax:
+
+		// THEN => make the request with ajax:
 		$.ajax({
-			//request from:
+
+			// request from:
 			url: fullUrl,
-			
-			//If ok:
+
+			// If request done:
 			success: function(resp){
-				//$("#verif").html(resp);
-				$("#city").html(resp.name);
+
+
+				$("#city").html(resp.name+"<span class=\"blink\" id=\"noChange\">_</span>");
 				$("#temp").html(Math.floor(resp.main.temp)+"&ordm;C");
 				$("#sky").html(resp.weather[0].main);
 				console.log("OK");
-				
+
 			}
 		});
 	}
 
-	//error messages:
+	// error messages:
 	function showError(error) {
 		switch(error.code) {
 			case error.PERMISSION_DENIED:
-				document.getElementById("err-console").innerHTML = "User denied the request for Geolocation.";
+				document.getElementById("err-console").innerHTML = "User denied the request for Geolocation :(";
+				$(".failed").html("Failed load");
 				break;
 			case error.POSITION_UNAVAILABLE:
 				document.getElementById("err-console").innerHTML = "Location information is unavailable.";
+				$(".failed").html("Failed load");
 				break;
 			case error.TIMEOUT:
 				document.getElementById("err-console").innerHTML = "The request to get user location timed out.";
+				$(".failed").html("Failed load");
 				break;
 			case error.UNKNOWN_ERROR:
 				document.getElementById("err-console").innerHTML = "An unknown error occurred.";
+				$(".failed").html("Failed load");
 				break;
 		}
 	}
-	
-	//STATUS: asignar y mostrar los datos >>>>> HECHO >>>>> en tiempo real >>>> HECHO
-	//
-	
-	
-	/*-------------------------EXAMPLE RESPONSE from reqWeatherApi----------------------
-	
+
+	// STATUS: asignar y mostrar los datos >>>>> HECHO >>>>> en tiempo real >>>> HECHO
+	// falta mostrar los iconos correspondientes ala meteorologia.
+
+	//apuntes:
+	// ERROR 503: server is kaput
+
+	/*-------------------------EXAMPLE OBJECT resp----------------------
+
 	{coord: {…}, weather: Array(1), base: "stations", main: {…}, visibility: 10000, …}
 		base:"stations"
 		clouds:{all: 0}
@@ -79,11 +87,11 @@ $(document).ready(function(){
 			__proto__:Array(0)
 		wind:{speed: 3.6, deg: 320}
 		__proto__:Object
-		
-	---------------------------------------------------------------------------------*/	
-	
+
+	---------------------------------------------------------------------------------*/
+
 	getLocation();
-	
-	
-	
+
+
+
 });
