@@ -36,19 +36,23 @@ $(document).ready(function(){
 				$("#sky").html("Sky: "+resp.weather[0].main);
 				$("#hum").html("Humidity: "+resp.main.humidity+"%"+"<span class=\"blink\" id=\"noChange\">_</span>");
 				console.log("OK");
-				
+
 				//icon show, DEPPENDING ON THE CODE IS BETTER
 				if( (resp.weather[0].main).toLowerCase().includes("clear") ){
-					$("#iconId").attr("src","img-clear.jpg");
-					
+					$("#iconId").attr("src","https://res.cloudinary.com/kuskus-img/image/upload/v1516308605/img-clear_fp82fa.png");
+
 				}else if( (resp.weather[0].main).includes("cloud") ){
-					$(".icon").attr("src","img-cloud.jpg");
-					
+					$(".icon").attr("src","http://res.cloudinary.com/kuskus-img/image/upload/v1516308605/img-cloud_fyuwsl.png");
+
 				}else if( (resp.weather[0].main).includes("rain") ){
-					$(".icon").attr("src","img-rain.jpg");
-					
+					$(".icon").attr("src","http://res.cloudinary.com/kuskus-img/image/upload/v1516308605/img-rain_cpefgv.png");
+
 				}else if( (resp.weather[0].main).includes("storm") ){
-					$(".icon").attr("src","img-storm.jpg");
+					$(".icon").attr("src","http://res.cloudinary.com/kuskus-img/image/upload/v1516308605/img-storm_idy9xx.png");
+				}
+
+				else if( (resp.weather[0].main).includes("snow") ){
+					$(".icon").attr("src","http://res.cloudinary.com/kuskus-img/image/upload/v1516308605/img-snow_izyxnq.png");
 				}
 
 			}
@@ -78,12 +82,11 @@ $(document).ready(function(){
 		}
 	}
 
-	
+
 	getLocation();
-	
+
 });
 	/*---------------------------EXAMPLE RECEIVED OBJECT-----------------------------
-
 	{coord: {…}, weather: Array(1), base: "stations", main: {…}, visibility: 10000, …}
 		base:"stations"
 		clouds:{all: 0}
@@ -101,7 +104,4 @@ $(document).ready(function(){
 			__proto__:Array(0)
 		wind:{speed: 3.6, deg: 320}
 		__proto__:Object
-
 	---------------------------------------------------------------------------------*/
-
-

@@ -16,6 +16,8 @@ html, body{
   border-color: #00ff00;
   text-align: center;
   display: inline-block;
+  padding: 30px;
+	text-align:center;
 }
 
 .box-1{
@@ -72,12 +74,19 @@ html, body{
 	border-style: solid;
 	border-color: #00ff00;
 	text-align: center;
+  vertical-align: middle;
 }
 
 .looklike{
 	font-family: 'Rajdhani', sans-serif;
 	color: #00ff00;
 	font-size: 15px;
+  vertical-align: middle;
+}
+
+.icon{
+  vertical-align: middle;
+  margin-top: 20px;
 }
 
 /*______condemned_blink_effect_____*/
