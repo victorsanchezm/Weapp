@@ -31,9 +31,10 @@ $(document).ready(function(){
 			success: function(resp){
 
 				//data show
-				$("#city").html(resp.name+"<span class=\"blink\" id=\"noChange\">_</span>");
-				$("#temp").html(Math.floor(resp.main.temp)+"&ordm;C");
-				$("#sky").html(resp.weather[0].main);
+				$("#city").html("Location: "+resp.name);
+				$("#temp").html("Temperature: "+Math.floor(resp.main.temp)+"&ordm;C"+" / "+Math.floor((resp.main.temp)* 9 / 5 + 32)+"&ordm;F");
+				$("#sky").html("Sky: "+resp.weather[0].main);
+				$("#hum").html("Humidity: "+resp.main.humidity+"%"+"<span class=\"blink\" id=\"noChange\">_</span>");
 				console.log("OK");
 				
 				//icon show, DEPPENDING ON THE CODE IS BETTER
