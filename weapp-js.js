@@ -21,7 +21,7 @@ $(document).ready(function(){
 		// Check the url:
 		console.log(fullUrl);
 
-		// THEN => make the request with ajax:
+		// THEN => make the request using ajax:
 		$.ajax({
 
 			// request from:
@@ -30,17 +30,32 @@ $(document).ready(function(){
 			// If request well done:
 			success: function(resp){
 
-
+				//data show
 				$("#city").html(resp.name+"<span class=\"blink\" id=\"noChange\">_</span>");
 				$("#temp").html(Math.floor(resp.main.temp)+"&ordm;C");
 				$("#sky").html(resp.weather[0].main);
 				console.log("OK");
+				
+				//icon show, DEPPENDING ON THE CODE IS BETTER
+				if( (resp.weather[0].main).toLowerCase().includes("clear") ){
+					$("#iconId").attr("src","img-clear.jpg");
+					
+				}else if( (resp.weather[0].main).includes("cloud") ){
+					$(".icon").attr("src","img-cloud.jpg");
+					
+				}else if( (resp.weather[0].main).includes("rain") ){
+					$(".icon").attr("src","img-rain.jpg");
+					
+				}else if( (resp.weather[0].main).includes("storm") ){
+					$(".icon").attr("src","img-storm.jpg");
+				}
 
 			}
 		});
 	}
 
-	// error messages:
+	// ERRORS:
+	// ERROR 503: server is kaput
 	function showError(error) {
 		switch(error.code) {
 			case error.PERMISSION_DENIED:
@@ -62,12 +77,10 @@ $(document).ready(function(){
 		}
 	}
 
-	// STATUS: asignar y mostrar los datos >>>>> HECHO >>>>> en tiempo real >>>> HECHO
-	// falta: mostrar los iconos correspondientes con la meteorologia.
-	//	
-	// apuntes:
-	// ERROR 503: server is kaput
-
+	
+	getLocation();
+	
+});
 	/*---------------------------EXAMPLE RECEIVED OBJECT-----------------------------
 
 	{coord: {…}, weather: Array(1), base: "stations", main: {…}, visibility: 10000, …}
@@ -90,8 +103,4 @@ $(document).ready(function(){
 
 	---------------------------------------------------------------------------------*/
 
-	getLocation();
 
-
-
-});
