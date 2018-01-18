@@ -12,7 +12,7 @@ $(document).ready(function(){
 		}
 	}
 
-	//FIRST => get latitude and longitude in order to create the url with current coords:
+	//FIRST => get latitude and longitude and create the url with current coords:
 	function showPosition(position) {
 		lat = position.coords.latitude ;
 		lon = position.coords.longitude;
@@ -27,7 +27,7 @@ $(document).ready(function(){
 			// request from:
 			url: fullUrl,
 
-			// If request done:
+			// If request well done:
 			success: function(resp){
 
 
@@ -63,12 +63,12 @@ $(document).ready(function(){
 	}
 
 	// STATUS: asignar y mostrar los datos >>>>> HECHO >>>>> en tiempo real >>>> HECHO
-	// falta mostrar los iconos correspondientes ala meteorologia.
-
-	//apuntes:
+	// falta: mostrar los iconos correspondientes con la meteorologia.
+	//	
+	// apuntes:
 	// ERROR 503: server is kaput
 
-	/*-------------------------EXAMPLE OBJECT resp----------------------
+	/*---------------------------EXAMPLE RECEIVED OBJECT-----------------------------
 
 	{coord: {…}, weather: Array(1), base: "stations", main: {…}, visibility: 10000, …}
 		base:"stations"
