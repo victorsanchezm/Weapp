@@ -37,22 +37,33 @@ $(document).ready(function(){
 				$("#hum").html("Humidity: "+resp.main.humidity+"%"+"<span class=\"blink\" id=\"noChange\">_</span>");
 				console.log("OK");
 
-				//icon show, DEPPENDING ON THE CODE IS BETTER
-				if( (resp.weather[0].main).toLowerCase().includes("clear") ){
+				//Display the icons:
+				if(resp.weather[0].id == 800){
 					$("#iconId").attr("src","https://res.cloudinary.com/kuskus-img/image/upload/v1516308605/img-clear_fp82fa.png");
 
-				}else if( (resp.weather[0].main).includes("cloud") ){
+				}else if(resp.weather[0].id >= 801 && resp.weather[0].id <= 804){
 					$(".icon").attr("src","http://res.cloudinary.com/kuskus-img/image/upload/v1516308605/img-cloud_fyuwsl.png");
 
-				}else if( (resp.weather[0].main).includes("rain") ){
+				}else if(resp.weather[0].id >= 500 && resp.weather[0].id <= 531){
 					$(".icon").attr("src","http://res.cloudinary.com/kuskus-img/image/upload/v1516308605/img-rain_cpefgv.png");
 
-				}else if( (resp.weather[0].main).includes("storm") ){
+				}else if(resp.weather[0].id >= 200 && resp.weather[0].id <= 232){
 					$(".icon").attr("src","http://res.cloudinary.com/kuskus-img/image/upload/v1516308605/img-storm_idy9xx.png");
-				}
-
-				else if( (resp.weather[0].main).includes("snow") ){
+					
+				}else if(resp.weather[0].id >= 600 && resp.weather[0].id <= 622){
 					$(".icon").attr("src","http://res.cloudinary.com/kuskus-img/image/upload/v1516308605/img-snow_izyxnq.png");
+					
+				}else if(resp.weather[0].id >= 300 && resp.weather[0].id <= 321){
+					$(".icon").attr("src","http://res.cloudinary.com/kuskus-img/image/upload/v1516308605/img-rain_cpefgv.png");
+					
+				}else if(resp.weather[0].id >= 701 && resp.weather[0].id <= 781){
+					$(".icon").attr("src","MIST");
+					
+				}else if(resp.weather[0].id >= 900 && resp.weather[0].id <= 906){
+					$(".icon").attr("src","SKULL");
+					
+				}else if(resp.weather[0].id >= 951 && resp.weather[0].id <= 962){
+					$(".icon").attr("src","INTERROGATION");
 				}
 
 			}
