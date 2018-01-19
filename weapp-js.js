@@ -42,28 +42,28 @@ $(document).ready(function(){
 					$("#iconId").attr("src","https://res.cloudinary.com/kuskus-img/image/upload/v1516308605/img-clear_fp82fa.png");
 
 				}else if(resp.weather[0].id === 801 && resp.weather[0].id <= 804){
-					$("#iconId").attr("src","http://res.cloudinary.com/kuskus-img/image/upload/v1516308605/img-cloud_fyuwsl.png");
+					$("#iconId").attr("src","https://res.cloudinary.com/kuskus-img/image/upload/v1516308605/img-cloud_fyuwsl.png");
 
 				}else if(resp.weather[0].id >= 500 && resp.weather[0].id <= 531){
-					$("#iconId").attr("src","http://res.cloudinary.com/kuskus-img/image/upload/v1516308605/img-rain_cpefgv.png");
+					$("#iconId").attr("src","https://res.cloudinary.com/kuskus-img/image/upload/v1516308605/img-rain_cpefgv.png");
 
 				}else if(resp.weather[0].id >= 200 && resp.weather[0].id <= 232){
-					$("#iconId").attr("src","http://res.cloudinary.com/kuskus-img/image/upload/v1516308605/img-storm_idy9xx.png");
+					$("#iconId").attr("src","https://res.cloudinary.com/kuskus-img/image/upload/v1516308605/img-storm_idy9xx.png");
 					
 				}else if(resp.weather[0].id >= 600 && resp.weather[0].id <= 622){
-					$("#iconId").attr("src","http://res.cloudinary.com/kuskus-img/image/upload/v1516308605/img-snow_izyxnq.png");
+					$("#iconId").attr("src","https://res.cloudinary.com/kuskus-img/image/upload/v1516308605/img-snow_izyxnq.png");
 					
 				}else if(resp.weather[0].id >= 300 && resp.weather[0].id <= 321){
-					$("#iconId").attr("src","http://res.cloudinary.com/kuskus-img/image/upload/v1516308605/img-rain_cpefgv.png");
+					$("#iconId").attr("src","https://res.cloudinary.com/kuskus-img/image/upload/v1516308605/img-rain_cpefgv.png");
 					
 				}else if(resp.weather[0].id >= 701 && resp.weather[0].id <= 781){
-					$("#iconId").attr("src","MIST");
+					$("#iconId").attr("src","https://res.cloudinary.com/kuskus-img/image/upload/v1516382737/mist_pwr5r1.png");
 					
 				}else if(resp.weather[0].id >= 900 && resp.weather[0].id <= 906){
-					$("#iconId").attr("src","SKULL");
+					$("#iconId").attr("src","https://res.cloudinary.com/kuskus-img/image/upload/v1516382737/skull_wvuvdv.png");
 					
 				}else if(resp.weather[0].id >= 951 && resp.weather[0].id <= 962){
-					$("#iconId").attr("src","INTERROGATION");
+					$("#iconId").attr("src","https://res.cloudinary.com/kuskus-img/image/upload/v1516382737/kcp_fqlxgg.png");
 				}
 
 			}
