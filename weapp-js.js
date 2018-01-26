@@ -41,7 +41,7 @@ $(document).ready(function(){
 				if(resp.weather[0].id === 800){
 					$("#iconId").attr("src","https://res.cloudinary.com/kuskus-img/image/upload/v1516308605/img-clear_fp82fa.png");
 
-				}else if(resp.weather[0].id === 801 && resp.weather[0].id <= 804){
+				}else if(resp.weather[0].id >= 801 && resp.weather[0].id <= 804){
 					$("#iconId").attr("src","https://res.cloudinary.com/kuskus-img/image/upload/v1516308605/img-cloud_fyuwsl.png");
 
 				}else if(resp.weather[0].id >= 500 && resp.weather[0].id <= 531){
